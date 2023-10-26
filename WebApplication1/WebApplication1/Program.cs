@@ -23,7 +23,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddIdentity<User, IdentityRole>()
+builder.Services.AddIdentity<TripUser, IdentityRole>()
     .AddEntityFrameworkStores<WebApplication1Context>();
 
 builder.Services.AddScoped<VoyageService>();

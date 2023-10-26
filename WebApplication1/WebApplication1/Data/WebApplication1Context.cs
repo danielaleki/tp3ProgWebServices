@@ -8,7 +8,7 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Data
 {
-    public class WebApplication1Context : IdentityDbContext<User>
+    public class WebApplication1Context : IdentityDbContext<TripUser>
     {
         public WebApplication1Context (DbContextOptions<WebApplication1Context> options)
             : base(options)

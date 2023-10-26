@@ -7,11 +7,12 @@ namespace WebApplication1.Models
     {
         [System.ComponentModel.DataAnnotations.Required]
         public string UserName { get; set; }
-        [System.ComponentModel.DataAnnotations.Required]
-        public string Password { get; set; }
+        
         [System.ComponentModel.DataAnnotations.Required]
         [EmailAddress]
         public string Email { get; set; }
+        [System.ComponentModel.DataAnnotations.Required]
+        public string Password { get; set; }
         [System.ComponentModel.DataAnnotations.Required]
         public string PassewordConfirm { get; set; }
     }

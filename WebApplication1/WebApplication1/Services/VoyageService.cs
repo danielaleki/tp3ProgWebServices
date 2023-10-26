@@ -19,7 +19,7 @@ namespace WebApplication1.Services
         //1) on vérifie si un voyage est Vide avant de le supprimer
         public async Task<bool> EffacerVoyageSiVide(int voyageId)
         {
-            var voyage = await _context.Voyages.Include(v => v.UserVoyages)
+            var voyage = await _context.Voyages.Include(v => v.TripUsers)
                                               .SingleOrDefaultAsync(v => v.Id == voyageId);
 
             if(voyage == null)
@@ -27,7 +27,7 @@ namespace WebApplication1.Services
                 throw new ArgumentException("Il n'y a aucun voyage correspondant");
             }
 
-            if (voyage.UserVoyages.Any())
+            if (voyage.TripUsers.Any())
             {
                 return false;
             }

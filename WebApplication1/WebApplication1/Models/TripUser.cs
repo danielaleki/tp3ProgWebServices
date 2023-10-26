@@ -6,10 +6,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication1.Models
 {
-    public class User: IdentityUser
+    public class TripUser: IdentityUser
     {
 
-        public virtual ICollection<UserVoyage> UserVoyages { get; set; }
+        public virtual List<Voyage> Voyages { get; set; }
            
     }
 }

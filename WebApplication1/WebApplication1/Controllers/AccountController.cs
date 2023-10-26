@@ -5,13 +5,13 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class AccountController : ControllerBase
     {
-        UserManager<User> userManager;
+        UserManager<TripUser> userManager;
 
-        public AccountController(UserManager<User> userManager)
+        public AccountController(UserManager<TripUser> userManager)
         {
             this.userManager = userManager;
         }
@@ -21,10 +21,10 @@ namespace WebApplication1.Controllers
         {
             if(register.Password != register.PassewordConfirm)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, new { Mesaage = "Les mots de passe ne concordent pas." });
+                return StatusCode(StatusCodes.Status500InternalServerError, new { Mesaage = "Les 2 mots de passe ne concordent pas." });
             }
 
-            User user = new User()
+            TripUser user = new TripUser() //Pour créer un utilisateur
             {
                 UserName = register.UserName,
                 Email = register.Email

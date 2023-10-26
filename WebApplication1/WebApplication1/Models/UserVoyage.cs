@@ -4,12 +4,12 @@
     {
         public int Id { get; set; }
 
-        public int UserId { get; set; }
 
-        public User User { get; set; }
+        public int TripUserId { get; set; }
+        public virtual TripUser TripUser { get; set; }
+
 
         public int VoyageId { get; set; }
-
-        public Voyage Voyage { get; set;}
+        public virtual Voyage Voyage { get; set;}
     }
 }

@@ -15,6 +15,6 @@ namespace WebApplication1.Models
 
         public bool IsPublic { get; set; }
 
-        public virtual ICollection<UserVoyage> UserVoyages { get; set; }
+        public virtual List<TripUser> TripUsers { get; set; }
     }
 }
