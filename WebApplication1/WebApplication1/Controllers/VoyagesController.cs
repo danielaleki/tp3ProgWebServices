@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize] //je vais ajouter les roles
     public class VoyagesController : ControllerBase
     {
         private readonly WebApplication1Context _context;
