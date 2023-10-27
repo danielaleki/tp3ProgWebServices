@@ -42,12 +42,12 @@ builder.Services.AddAuthentication(options =>
     options.RequireHttpsMetadata = true;//Pour lui dire si on force l'utilisation de https en authentification
     options.TokenValidationParameters = new TokenValidationParameters()
     {
-        ValidateAudience = true,
+        ValidateAudience = false,
         ValidateIssuer = true,
         ValidAudience = "http://localhost:4200",
         ValidIssuer = "https://localhost:7024",
         //C'est la clé qui va être changé (e) un client et le serveur
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Is this Working?"))
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Ma_clé_secrète_ici_elle_se_trouve"))
 
     };
 });

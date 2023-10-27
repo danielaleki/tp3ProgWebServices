@@ -14,10 +14,12 @@ namespace WebApplication1.Controllers
     public class AccountController : ControllerBase
     {
         UserManager<TripUser> userManager;
+        IConfiguration configuration;
 
         public AccountController(UserManager<TripUser> userManager)
         {
             this.userManager = userManager;
+            //this.configuration = configuration;
         }
 
         //POST api/Account/Login
@@ -39,18 +41,22 @@ namespace WebApplication1.Controllers
                 }
                 authClaims.Add(new Claim(ClaimTypes.NameIdentifier, user.Id));
 
-                SymmetricSecurityKey authKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Is this Working?"));
+                SymmetricSecurityKey authKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Ma_clé_secrète_ici_elle_se_trouve"));
 
                 JwtSecurityToken token = new JwtSecurityToken(
                     issuer: "https://locahost:7024",
                     audience: "http://localhost:4200",
                     claims: authClaims,
-                    //On dit le temps que le token est gardé
+                    //On indique le temps que le token est gardé
                     expires: DateTime.Now.AddHours(1),
                     signingCredentials: new SigningCredentials(authKey, SecurityAlgorithms.HmacSha256)
                 );
 
-                return Ok();
+                return Ok(new
+                {
+                    token = new JwtSecurityTokenHandler().WriteToken(token),
+                    validTo = token.ValidTo
+                });
             }
             
 
