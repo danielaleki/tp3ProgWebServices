@@ -905,3 +905,4 @@ C:\Users\danya\OneDrive\Documents\Automne 2023\Prog Orientée Services\TP3\tp3Pr
 C:\Users\danya\OneDrive\Documents\Automne 2023\Prog Orientée Services\TP3\tp3ProgWebServices\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.csproj.CopyComplete
 C:\Users\danya\OneDrive\Documents\Automne 2023\Prog Orientée Services\TP3\tp3ProgWebServices\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.genruntimeconfig.cache
 C:\Users\danya\OneDrive\Documents\Automne 2023\Prog Orientée Services\TP3\tp3ProgWebServices\WebApplication1\WebApplication1\obj\Debug\net6.0\ref\WebApplication1.dll
+C:\Users\2266058\Desktop\tp3ProgWebServices\WebApplication1\WebApplication1\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

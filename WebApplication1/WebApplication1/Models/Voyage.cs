@@ -1,4 +1,4 @@
-﻿using MessagePack;
+using MessagePack;
 using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication1.Models
@@ -15,6 +15,6 @@ namespace WebApplication1.Models
 
         public bool IsPublic { get; set; }
 
-        public virtual List<TripUser> TripUsers { get; set; }
+        public virtual List<TripUser>? TripUsers { get; set; }
     }
 }

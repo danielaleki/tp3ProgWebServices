@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -14,13 +14,13 @@ namespace WebApplication1.Controllers
     public class AccountController : ControllerBase
     {
         UserManager<TripUser> userManager;
-        IConfiguration configuration;
+        IConfiguration config;
 
-        public AccountController(UserManager<TripUser> userManager)
+        public AccountController(UserManager<TripUser> userManager, IConfiguration configuration)
         {
             this.userManager = userManager;
-            //this.configuration = configuration;
-        }
+            this.config = configuration;
+    }
 
         //POST api/Account/Login
         [HttpPost]
@@ -41,7 +41,7 @@ namespace WebApplication1.Controllers
                 }
                 authClaims.Add(new Claim(ClaimTypes.NameIdentifier, user.Id));
 
-                SymmetricSecurityKey authKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Ma_clé_secrète_ici_elle_se_trouve"));
+                SymmetricSecurityKey authKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JWT:Secret"]));
 
                 JwtSecurityToken token = new JwtSecurityToken(
                     issuer: "https://locahost:7024",
@@ -60,7 +60,8 @@ namespace WebApplication1.Controllers
             }
             
 
-            return StatusCode(StatusCodes.Status417ExpectationFailed, new { Message = "L'utilisateur est introuvable." });
+            return StatusCode(StatusCodes.Status417ExpectationFailed, new { Message = "L'utilisateur est introuvable ou le mot de passe " +
+              "et le nom d'utilisateur sont introuvables." });
             
         }
 

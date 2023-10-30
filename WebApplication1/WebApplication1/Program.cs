@@ -46,8 +46,8 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuer = true,
         ValidAudience = "http://localhost:4200",
         ValidIssuer = "https://localhost:7024",
-        //C'est la clé qui va être changé (e) un client et le serveur
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Ma_clé_secrète_ici_elle_se_trouve"))
+        //C'est la clÃ© qui va Ãªtre changÃ© (e) un client et le serveur
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Est-ce ma clÃ© se retrouve bien ici?"))
 
     };
 });
