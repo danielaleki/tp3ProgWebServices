@@ -9,7 +9,7 @@ namespace WebApplication1.Models
     public class TripUser: IdentityUser
     {
 
-        public virtual List<Voyage> Voyages { get; set; }
+        public virtual List<Voyage>? Voyages { get; set; }
            
     }
 }
