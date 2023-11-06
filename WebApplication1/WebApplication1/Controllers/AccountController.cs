@@ -15,12 +15,14 @@ namespace WebApplication1.Controllers
     {
         UserManager<TripUser> userManager;
         IConfiguration config;
+        ILogger<AccountController> _logger;
 
-        public AccountController(UserManager<TripUser> userManager, IConfiguration configuration)
+        public AccountController(UserManager<TripUser> userManager, IConfiguration configuration, ILogger<AccountController> logger)
         {
             this.userManager = userManager;
             this.config = configuration;
-    }
+            _logger = logger;
+        }
 
         //POST api/Account/Login
         [HttpPost]
@@ -70,9 +72,9 @@ namespace WebApplication1.Controllers
         public async Task<ActionResult> Register(RegisterDTO register)
         {
             //On fait la validation du Client côté Serveur.
-            if(register.Password != register.PassewordConfirm)
+            if(register.Password != register.PasswordConfirm)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, new { Mesaage = "Les 2 mots de passe ne concordent pas." });
+                return StatusCode(StatusCodes.Status500InternalServerError, new { Message = "Les 2 mots de passe ne concordent pas." });
             }
 
             TripUser user = new TripUser() //Pour créer un utilisateur
@@ -85,6 +87,9 @@ namespace WebApplication1.Controllers
 
             if (!identityResult.Succeeded)
             {
+                var errors = identityResult.Errors.Select(e => e.Description);
+                _logger.LogError(String.Join(",", errors));
+
                 return StatusCode(StatusCodes.Status500InternalServerError, new {Error = identityResult.Errors});
             }
 

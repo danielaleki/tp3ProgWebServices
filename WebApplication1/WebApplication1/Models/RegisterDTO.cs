@@ -14,6 +14,6 @@ namespace WebApplication1.Models
         [System.ComponentModel.DataAnnotations.Required]
         public string Password { get; set; }
         [System.ComponentModel.DataAnnotations.Required]
-        public string PassewordConfirm { get; set; }
+        public string PasswordConfirm { get; set; }
     }
 }

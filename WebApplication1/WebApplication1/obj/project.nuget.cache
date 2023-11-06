@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TVwSBpd3uO3xr/x0/N9PUL/vUTL5c2KELKQrzdt1Ev4uAFFENwdMtkfm+PecQvhvQMICxA0XRfFDZNUb46f/OQ==",
+  "dgSpecHash": "OcSkFvqH+FNBY1+Gn+aLzleOlq7FCkSWAOxNUmo91jhza5CZimft/vx+DnFuerZQUCTyl+79vbMiPzVwofUy4g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\danya\\OneDrive\\Documents\\Automne 2023\\Prog Orientée Services\\TP3\\Lun30-10-23\\tp3ProgWebServices\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "C:\\Users\\danya\\OneDrive\\Documents\\Automne 2023\\tp3ProgWebServices\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danya\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\danya\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

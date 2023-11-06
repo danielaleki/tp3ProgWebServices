@@ -17,9 +17,11 @@ builder.Services.AddDbContext<WebApplication1Context>(options =>
                         throw new InvalidOperationException("Connection string 'WebApplication1Context' not found."));
     options.UseLazyLoadingProxies();
 });
-    
+
 
 // Add services to the container.
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -58,11 +60,11 @@ builder.Services.AddScoped<VoyageService>();
 
 builder.Services.AddCors(options =>
 {
-        options.AddPolicy("Permettre tout", policy =>
+        options.AddPolicy("AllowAll", policy =>
         {
             policy.AllowAnyOrigin();
-            policy.AllowAnyMethod();
             policy.AllowAnyHeader();
+            policy.AllowAnyMethod();
         });
         
 });
@@ -78,7 +80,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors("Permettre tout");
+app.UseCors("AllowAll");
 
 app.UseHttpsRedirection();
 
