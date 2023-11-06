@@ -87,6 +87,7 @@ namespace WebApplication1.Controllers
 
             if (!identityResult.Succeeded)
             {
+                //Pour retrouver un log de l'erreur dans la console
                 var errors = identityResult.Errors.Select(e => e.Description);
                 _logger.LogError(String.Join(",", errors));
 
