@@ -1512,3 +1512,4 @@ C:\Users\danya\OneDrive\Documents\Automne 2023\tp3ProgWebServices\WebApplication
 C:\Users\danya\OneDrive\Documents\Automne 2023\tp3ProgWebServices\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.pdb
 C:\Users\danya\OneDrive\Documents\Automne 2023\tp3ProgWebServices\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.genruntimeconfig.cache
 C:\Users\danya\OneDrive\Documents\Automne 2023\tp3ProgWebServices\WebApplication1\WebApplication1\obj\Debug\net6.0\ref\WebApplication1.dll
+C:\Users\danya\OneDrive\Documents\Automne 2023\tp3ProgWebServices\WebApplication1\WebApplication1\bin\Debug\net6.0\WebApplication1.staticwebassets.runtime.json

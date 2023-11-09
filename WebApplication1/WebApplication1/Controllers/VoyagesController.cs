@@ -11,7 +11,7 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     [Authorize] //je vais ajouter les roles
     public class VoyagesController : ControllerBase
@@ -86,12 +86,17 @@ namespace WebApplication1.Controllers
         // POST: api/Voyages
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Voyage>> PostVoyage(Voyage voyage)
+        public async Task<ActionResult<Voyage>> CreateVoyage(Voyage voyage)
         {
           if (_context.Voyages == null)
           {
               return Problem("Entity set 'WebApplication1Context.Voyage'  is null.");
           }
+
+          if(voyage.PhotoCouverture == null)
+            {
+                voyage.PhotoCouverture = "/wwwroot/images/Safari.jpg";
+            }
             _context.Voyages.Add(voyage);
             await _context.SaveChangesAsync();
 
